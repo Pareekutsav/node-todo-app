@@ -7,6 +7,15 @@ pipeline {
                 checkout scm
             }
         }
-         
+         stage('installing  dependancies') {
+            steps {
+                sh "install npm"
+            }
+        }
+         stage('running app local') {
+            steps {
+                sh "node app.js"
+            }
+        }
     }
 }
